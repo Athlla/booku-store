@@ -16,9 +16,7 @@ const Layout = ({ title, className, children }: Props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main className={`container mt-4 w-11/12 md:w-full ${className}`}>
-        {children}
-      </main>
+      <main className={`container mt-4 w-11/12 ${className}`}>{children}</main>
     </>
   )
 }
