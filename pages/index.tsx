@@ -2,7 +2,6 @@ import { GetStaticProps } from 'next'
 
 import Layout from 'components/Layout'
 import Categories from 'components/Categories'
-import BookItem from 'components/Book/BookItem'
 
 import { ICategory } from 'Interfaces/category'
 import { IBook } from 'Interfaces/book'
