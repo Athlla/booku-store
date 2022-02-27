@@ -11,8 +11,6 @@ interface Props {
 }
 
 const Book = ({ result }: Props) => {
-  console.log(result)
-
   return (
     <Layout title="Book | Booku" className="md:mt-16">
       <div className="flex w-full max-w-lg gap-4 pb-5 mx-auto mb-6 shadow-lg">
