@@ -1,6 +1,11 @@
 import { GetServerSideProps } from 'next'
 import Image from 'next/image'
-import { BookOpenIcon, ClockIcon, MenuAlt3Icon } from '@heroicons/react/outline'
+import {
+  BookOpenIcon,
+  ClockIcon,
+  MenuAlt3Icon,
+  BookmarkIcon,
+} from '@heroicons/react/outline'
 
 import Layout from 'components/Layout'
 
@@ -40,12 +45,16 @@ const Book = ({ result }: Props) => {
               </p>
             </div>
           </div>
-          <div className="hidden gap-1 py-4 md:flex">
-            <button className="flex items-center justify-center w-32 h-10 gap-2 font-bold text-white rounded-l-full bg-slate-800">
+          <button className="flex h-8 w-full max-w-[180px] items-center justify-center gap-2 rounded-full border-2 border-slate-800 text-sm font-semibold md:text-base">
+            <BookmarkIcon className="w-4 h-4" />
+            Add to bookmark
+          </button>
+          <div className="flex gap-1 py-4">
+            <button className="flex items-center justify-center w-24 h-8 gap-2 text-sm font-bold text-white rounded-l-full bg-slate-800 md:h-10 md:w-32 md:text-base">
               <BookOpenIcon className="w-4 h-4" />
               <span>Read</span>
             </button>
-            <button className="flex items-center justify-center w-32 h-10 gap-2 font-bold border rounded-r-full border-slate-800 text-slate-800">
+            <button className="flex items-center justify-center w-24 h-8 gap-2 text-sm font-bold border rounded-r-full border-slate-800 text-slate-800 md:h-10 md:w-32 md:text-base">
               <BookOpenIcon className="w-4 h-4" />
               <span>Listen</span>
             </button>
