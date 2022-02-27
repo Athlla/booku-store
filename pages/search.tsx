@@ -28,11 +28,23 @@ export default Search
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { q } = context.query
 
-  const books: IBook[] = await (
+  const categories = await (
     await fetch(
-      'https://asia-southeast2-sejutacita-app.cloudfunctions.net/fee-assessment-books?categoryId=1&size=300'
+      'https://asia-southeast2-sejutacita-app.cloudfunctions.net/fee-assessment-categories'
     )
   ).json()
+
+  const books = []
+
+  for (let i = 0; i < categories.length; i++) {
+    const res: IBook[] = await (
+      await fetch(
+        `https://asia-southeast2-sejutacita-app.cloudfunctions.net/fee-assessment-books?categoryId=${categories[i].id}&size=300`
+      )
+    ).json()
+
+    books.push(...res)
+  }
 
   const results = books.filter(
     (book) =>
