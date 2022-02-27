@@ -27,7 +27,10 @@ const Home = ({ categories, books }: Props) => {
         </figure>
       </div>
       <Categories data={categories} />
-      <Booklist books={books} category={categories[0].name} />
+      <h2 className="mb-6 text-2xl font-semibold">
+        Popular in {categories[0].name}
+      </h2>
+      <Booklist books={books} />
     </Layout>
   )
 }

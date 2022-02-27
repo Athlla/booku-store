@@ -1,17 +1,16 @@
 import BookItem from './BookItem'
 
 import { IBook } from 'Interfaces/book'
+import { ReactNode } from 'react'
 
 interface Props {
-  category: string
   books: IBook[]
 }
 
-const Booklist = ({ books, category }: Props) => {
+const Booklist = ({ books }: Props) => {
   return (
     <div className="mt-8">
-      <h2 className="mb-6 text-2xl font-semibold">Popular in {category}</h2>
-      <div className="flex flex-wrap -m-2 md:-m-4">
+      <div className="flex flex-wrap mt-8 -m-2 md:-m-4">
         {books?.map((book) => (
           <BookItem key={book.id} {...book} />
         ))}
