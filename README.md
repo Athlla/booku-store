@@ -1,27 +1,41 @@
-# Next.js + Tailwind CSS Example
+# Booku Store
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+Ini adalah test frontend dari sejutacita dengan tema bookstore.
 
-## Preview
+## Tech Stack
+- React.js
+- Next.js
+- TailwindCSS
+- Context API
 
-Preview the example live on [StackBlitz](http://stackblitz.com/):
+## Link
+- Live site URL [https://booku-store-athlla.vercel.app/](https://booku-store-athlla.vercel.app/)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+## Feedback
+- Pada api buku tidak terdapat totalpage, currentpage yang mana membuat server side pagination lebih sulit, akan lebih baik jika pada response api buku terdapat totalpage dan juga currentpage.
+- Pada disetiap object buku kategori hanya diberikan dalam bentuk id, akan lebih baik jika dijadikan object yang mana terdapat id dan juga name dari kategori agar tidak perlu melakukan request lagi ke api kategori
 
-## Deploy your own
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+## How to run
 
 ```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
+# install dependencies
+npm i
+# atau
+yarn
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+# menjalankan dalam development mode di localhost:3000
+npm run dev
+# atau
+yarn dev
+
+# build untuk production
+npm run build
+# atau
+yarn build
+
+# start production mode
+npm start
+# atau
+yarn start
+```
