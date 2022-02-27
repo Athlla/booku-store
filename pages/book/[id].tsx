@@ -1,3 +1,4 @@
+import { useContext } from 'react'
 import { GetServerSideProps } from 'next'
 import Image from 'next/image'
 import {
@@ -8,6 +9,7 @@ import {
 } from '@heroicons/react/outline'
 
 import Layout from 'components/Layout'
+import { BookmarkContext } from 'context/bookmark'
 
 import { IBook } from 'Interfaces/book'
 
@@ -16,6 +18,8 @@ interface Props {
 }
 
 const Book = ({ result }: Props) => {
+  const { bookmark, toggleBookmark } = useContext(BookmarkContext)
+
   return (
     <Layout title="Book | Booku" className="md:mt-16">
       <div className="flex w-full max-w-lg gap-4 pb-5 mx-auto mb-6 shadow-lg">
@@ -45,9 +49,22 @@ const Book = ({ result }: Props) => {
               </p>
             </div>
           </div>
-          <button className="flex h-8 w-full max-w-[180px] items-center justify-center gap-2 rounded-full border-2 border-slate-800 text-sm font-semibold md:text-base">
-            <BookmarkIcon className="w-4 h-4" />
-            Add to bookmark
+          <button
+            onClick={() => toggleBookmark(result)}
+            className="flex items-center justify-center h-8 gap-2 px-2 text-sm font-semibold border-2 rounded-full w-fit border-slate-800 md:text-base"
+          >
+            <BookmarkIcon
+              className={`h-4 w-4 ${
+                bookmark.some((bm) => bm.id === result.id)
+                  ? 'fill-slate-800'
+                  : 'fill-transparent'
+              }`}
+            />
+            <span>
+              {bookmark.some((bm) => bm.id === result.id)
+                ? 'Remove from bookmark'
+                : 'Add to bookmark'}
+            </span>
           </button>
           <div className="flex gap-1 py-4">
             <button className="flex items-center justify-center w-24 h-8 gap-2 text-sm font-bold text-white rounded-l-full bg-slate-800 md:h-10 md:w-32 md:text-base">

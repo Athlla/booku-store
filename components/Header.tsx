@@ -50,7 +50,11 @@ const Header = () => {
         />
         <SearchIcon className="w-4 h-4" />
       </form>
-      <BookmarkIcon className="w-6 h-6 cursor-pointer" />
+      <Link href="/bookmark">
+        <a>
+          <BookmarkIcon className="w-6 h-6 cursor-pointer" />
+        </a>
+      </Link>
     </header>
   )
 }

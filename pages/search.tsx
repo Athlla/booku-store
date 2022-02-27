@@ -18,7 +18,13 @@ const Search = ({ results }: Props) => {
       <p>
         Result for <strong>"{query.q}"</strong>
       </p>
-      <Booklist books={results} />
+      {results.length === 0 ? (
+        <p className="mt-8 text-center">
+          We couldn't find anything for <strong>{query.q}</strong>
+        </p>
+      ) : (
+        <Booklist books={results} />
+      )}
     </Layout>
   )
 }
